@@ -1,4 +1,5 @@
-import { FooterBanner, HeroBanner , Product } from "@/components";
+import { FooterBanner, HeroBanner, Product } from "@/components";
+import { client } from "@/lib/client";
 import React from "react";
 
 const Home = () => {
@@ -18,6 +19,14 @@ const Home = () => {
       <FooterBanner />
     </>
   );
+};
+
+export const getServerSideProps = async () => {
+  const query = '*[_type == "product"]';
+  const products = await client.fetch(query);
+
+  const bannerQuery = '*[_type == "banner"]';
+  const bannerData = await client.fetch(query);
 };
 
 export default Home;
