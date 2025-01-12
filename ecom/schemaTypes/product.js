@@ -1,6 +1,6 @@
 export default {
   name: 'product',
-  title: 'product',
+  title: 'Product',
   type: 'document',
   fields: [
     {
@@ -23,7 +23,18 @@ export default {
       type: 'slug',
       options: {
         source: 'name',
+        maxLength: 90
       },
     },
+    { 
+      name: 'price',
+      title: 'Price',
+      type: 'number',
+    },
+    { 
+      name: 'details',
+      title: 'Details',
+      type: 'string',
+    }
   ],
 }
