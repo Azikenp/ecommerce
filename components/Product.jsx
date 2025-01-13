@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import Link from "next/link";
 
-const Product = () => {
-  return (
-    <div>Product</div>
-  )
-}
+import { urlFor } from "@/lib/client";
 
-export default Product
+const Product = ({ product : {image, name, slug, price}}) => {
+  return <div>
+    
+  </div>;
+};
+
+export default Product;
