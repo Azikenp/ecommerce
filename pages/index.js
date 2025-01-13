@@ -3,11 +3,11 @@ import { client } from "@/lib/client";
 import React from "react";
 
 const Home = ({ products, bannerData }) => {
-  console.log(products);
+  console.log(products, bannerData);
 
   return (
     <>
-      <HeroBanner />
+      <HeroBanner heroBanner={bannerData.length && bannerData[0]} />
 
       <div className="products-heading">
         <h2>Best Selling Products</h2>
@@ -15,7 +15,7 @@ const Home = ({ products, bannerData }) => {
       </div>
 
       <div className="products-container">
-        {["Product1", "Product2"].map((product) => product)}
+        {products.map((product) => product.name)}
       </div>
 
       <FooterBanner />
