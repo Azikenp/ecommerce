@@ -2,9 +2,9 @@ import { FooterBanner, HeroBanner, Product } from "@/components";
 import { client } from "@/lib/client";
 import React from "react";
 
-const Home = ({products, bannerData}) => {
-  console.log(products);
-  
+const Home = ({ products, bannerData }) => {
+  console.log(products, bannerData);
+
   return (
     <>
       <HeroBanner />
@@ -30,7 +30,9 @@ export const getServerSideProps = async () => {
   const bannerQuery = '*[_type == "banner"]';
   const bannerData = await client.fetch(bannerQuery);
 
-  return { props: { products, bannerData } };
+  return {
+    props: { products, bannerData },
+  };
 };
 
 export default Home;
