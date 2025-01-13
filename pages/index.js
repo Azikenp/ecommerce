@@ -3,7 +3,7 @@ import { client } from "@/lib/client";
 import React from "react";
 
 const Home = ({ products, bannerData }) => {
-  console.log(products, bannerData);
+  console.log(products);
 
   return (
     <>
