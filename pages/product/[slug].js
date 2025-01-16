@@ -1,12 +1,13 @@
 import { urlFor } from "@/lib/client";
 import React from "react";
 
-const ProductDetails = () => {
+const ProductDetails = ({ products, product }) => {
+  const { image, name, details, price } = products;
   return (
     <div className="product-detail-container">
       <div>
         <div className="image-container">
-          <img src="" />
+          <img src={urlFor(image && image[0])} />
         </div>
       </div>
     </div>
@@ -15,11 +16,10 @@ const ProductDetails = () => {
 
 export const getStaticProps = async ({ params: { slug } }) => {
   const query = `*[_type == "product" & slug.current == '${slug}'][0]`;
-  const productsQuery  = '*[_type == "product"]'
+  const productsQuery = '*[_type == "product"]';
 
   const product = await client.fetch(query);
   const products = await client.fetch(productsQuery);
-
 
   return {
     props: { product, products },
