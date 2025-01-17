@@ -30,7 +30,6 @@ const ProductDetails = ({ products, product }) => {
               <AiFillStar />
               <AiFillStar />
               <AiFillStar />
-              <AiFillStar />
               <AiOutlineStar />
             </div>
             <p>(20)</p>
