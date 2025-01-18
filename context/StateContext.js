@@ -18,7 +18,7 @@ export const StateContext = ({ children }) => {
     setTotalPrice(
       (prevTotalPrice) => prevTotalPrice + product.price * quantity
     );
-    setTotalQuatities((prevTotalQuantities) => prevTotalQuantities + quantity);
+    setTotalQuantities((prevTotalQuantities) => prevTotalQuantities + quantity);
 
     if (checkProductInCart) {
       const updatedCartItems = cartItems.map((cartProduct) => {
