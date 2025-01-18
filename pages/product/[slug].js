@@ -7,17 +7,22 @@ import {
   AiOutlinePlus,
   AiOutlineStar,
 } from "react-icons/ai";
+import { useStateContext } from "@/context/StateContext";
 
 const ProductDetails = ({ products, product }) => {
   const { image, name, details, price } = product;
   const [index, setIndex] = useState(0);
+  const {incQty, decQty, qty} = useStateContext();
 
   return (
     <div>
       <div className="product-detail-container">
         <div>
           <div className="image-container">
-            <img src={urlFor(image && image[index])} className="product-detail-image" />
+            <img
+              src={urlFor(image && image[index])}
+              className="product-detail-image"
+            />
           </div>
           <div className="small-images-container">
             {image?.map((item, i) => (
@@ -46,17 +51,17 @@ const ProductDetails = ({ products, product }) => {
           </div>
           <h4>Details:</h4>
           <p>{details}</p>
-          <p className="price">${price}</p>
+          <p className="price">${price * qty}</p>
           <div className="quantity">
             <h3>Quantity:</h3>
             <p className="quantity-desc">
-              <span className="minus" onClick="">
+              <span className="minus" onClick={decQty}>
                 <AiOutlineMinus />
               </span>
               <span className="num" onClick="">
-                0
+                {qty}
               </span>
-              <span className="plus" onClick="">
+              <span className="plus" onClick={incQty}>
                 <AiOutlinePlus />
               </span>
             </p>
