@@ -9,12 +9,12 @@ export const StateContext = ({ children }) => {
   const [totalPrice, setTotalPrice] = useState();
   const [totalQuatities, setTotalQuatities] = useState();
   const [qty, setQty] = useState(1);
-};
 
-return (
-  <ContextProvider
-    value={{ showCart, cartItems, totalPrice, totalQuatities, qty }}
-  >
-    {children}
-  </ContextProvider>
-);
+  return (
+    <Context.Provider
+      value={{ showCart, cartItems, totalPrice, totalQuatities, qty }}
+    >
+      {children}
+    </Context.Provider>
+  );
+};
