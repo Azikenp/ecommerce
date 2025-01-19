@@ -14,6 +14,7 @@ export const StateContext = ({ children }) => {
   let index;
 
   const onAdd = (product, quantity) => {
+    
     const checkProductInCart = cartItems.find(
       (item) => item._id === product._id
     );
