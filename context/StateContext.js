@@ -1,3 +1,4 @@
+import product from "@/ecom/schemaTypes/product";
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
 
@@ -14,7 +15,6 @@ export const StateContext = ({ children }) => {
   let index;
 
   const onAdd = (product, quantity) => {
-    
     const checkProductInCart = cartItems.find(
       (item) => item._id === product._id
     );
@@ -41,8 +41,21 @@ export const StateContext = ({ children }) => {
     }
     toast.success(`${qty} ${product.name} added to the cart`);
   };
-  
-  const toggleCartItemQuantity = (id, value) => { }
+
+  const toggleCartItemQuantity = (id, value) => {
+    foundProduct = cartItems.find((item) => item._id === id);
+    index = cartItems.findIndex((product) => product._id === id);
+
+    if (value === "inc") {
+      let newCartItems = [
+        ...cartItems,
+        { ...foundProduct, quantity: foundProduct.quantity + 1 },
+      ];
+      setCartItems(newCartItems);
+      setTotalPrice((prevTotalPrice) => prevTotalPrice + foundProduct.price);
+    } else if (value === "dec") {
+    }
+  };
 
   const incQty = () => {
     setQty((prevQty) => prevQty + 1);
@@ -66,7 +79,7 @@ export const StateContext = ({ children }) => {
         qty,
         incQty,
         decQty,
-        onAdd
+        onAdd,
       }}
     >
       {children}
