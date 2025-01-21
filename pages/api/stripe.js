@@ -9,8 +9,8 @@ export default async function handler(req, res) {
         payment_method_types: ["card"],
         billing_address_collection: "auto",
         shipping_options: [
-          {shipping_rate: ''},
-          {shipping_rate: ''},
+          {shipping_rate: 'shr_1QjqgJC8YyeL469fZCXAkpX8'},
+          {shipping_rate: 'shr_1QjqhXC8YyeL469fnVXBkLUq'},
         ],
         line_items: [
           {
