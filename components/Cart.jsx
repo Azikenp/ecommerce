@@ -22,6 +22,8 @@ const Cart = () => {
     onRemove,
   } = useStateContext();
 
+  const handleCheckout = () => {};
+
   return (
     <div className="cart-wrapper" ref={cartRef}>
       <div className="cart-container">
@@ -108,7 +110,12 @@ const Cart = () => {
               <h3>${totalPrice}</h3>
             </div>
             <div className="btn-container">
-              <button type="button" className="btn" onClick="">
+              <button
+                onClick={handleCheckout}
+                type="button"
+                className="btn"
+                onClick=""
+              >
                 Pay with stripe
               </button>
             </div>
