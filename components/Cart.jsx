@@ -115,7 +115,7 @@ const Cart = () => {
                 type="button"
                 className="btn"
               >
-                Pay with stripe
+                Pay with Stripe
               </button>
             </div>
           </div>
