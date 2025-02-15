@@ -38,7 +38,7 @@ export default async function handler(req, res) {
               enabled: true,
               minimum: 1,
             },
-            quantiity: item.quantity,
+            quantity: item.quantity,
           };
         }),
         success_url: `${req.headers.origin}/?success=true`,
