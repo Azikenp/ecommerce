@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 import { useStateContext } from "@/context/StateContext";
 
 const Success = () => {
-  const { setCartItems, setTotalPrice, setTotalQuantites } = useStateContext;
+  const { setCartItems, setTotalPrice, setTotalQuantites } = useStateContext();
   const [order, setOrder] = useState(null);
 
   return <div>Success</div>;
