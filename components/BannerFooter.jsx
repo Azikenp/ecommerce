@@ -1,7 +1,7 @@
 import { urlFor } from "@/lib/client";
 import Link from "next/link";
 
-const FooterBanner = ({
+const BannerFooter = ({
   footerBanner: {
     discount,
     largeText1,
@@ -40,4 +40,4 @@ const FooterBanner = ({
   );
 };
 
-export default FooterBanner;
+export default BannerFooter;
