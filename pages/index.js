@@ -1,5 +1,5 @@
 import {  HeroBanner, Product } from "@/components";
-import FooterBanner from "@/components/FooterBanner";
+import FooterBanner from '../components/FooterBanner';
 import { client } from "@/lib/client";
 import React from "react";
 
