@@ -1,5 +1,4 @@
-import {  HeroBanner, Product } from "@/components";
-import FooterBanner from '../components/FooterBanner.jsx';
+import { FooterBanner, HeroBanner, Product } from "@/components";
 import { client } from "@/lib/client";
 import React from "react";
 
