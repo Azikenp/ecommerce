@@ -1,5 +1,5 @@
 import {  HeroBanner, Product } from "@/components";
-// import FooterBanner from '../components/FooterBanner.jsx';
+import FooterBanner from '../components/FooterBanner.jsx';
 import { client } from "@/lib/client";
 import React from "react";
 
@@ -21,7 +21,7 @@ const Home = ({ products, bannerData }) => {
         ))}
       </div>
 
-      {/* <FooterBanner footerBanner= {bannerData && bannerData[0]} /> */}
+      <FooterBanner footerBanner= {bannerData && bannerData[0]} />
     </>
   );
 };
